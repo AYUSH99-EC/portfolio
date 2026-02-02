@@ -1,0 +1,249 @@
+/* --- 1. PROJECT SECTION BASE --- */
+.projectSection {
+  background-color: #0f172a !important; 
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+  margin-top: -1px; 
+}
+
+.projectSection::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* --- 2. THE HEADING --- */
+.projectSection .heading {
+  font-size: clamp(2.5rem, 4vw, 3.2rem);
+  font-weight: 800;
+  margin-bottom: 60px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.projectSection .heading span {
+  background: linear-gradient(to right, #818cf8, #f472b6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* --- 3. THE GRIDS --- */
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 35px;
+  width: 90%;
+  max-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+}
+
+.galleryGrid {
+  column-count: 3;
+  column-gap: 25px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+  position: relative;
+  z-index: 5;
+  animation: slideUp 0.6s ease-out;
+}
+
+/* --- 4. THE GLASS CARDS --- */
+.card, .galleryCard {
+  background: rgba(30, 41, 59, 0.4) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card {
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+}
+
+.galleryCard {
+  break-inside: avoid;
+  margin-bottom: 25px;
+  display: inline-block;
+  width: 100%;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.card:hover, .galleryCard:hover {
+  transform: translateY(-8px) scale(1.02);
+  background: rgba(30, 41, 59, 0.6) !important;
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* --- 5. GALLERY & LIGHTBOX ELEMENTS --- */
+.galleryCard img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.assetLabel {
+  padding: 15px;
+  color: #ffffff;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1rem;
+  background: rgba(15, 23, 42, 0.3);
+}
+
+.lightboxOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(15px);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+.lightboxContent {
+  position: relative;
+  max-width: 90%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightboxContent img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 16px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
+  object-fit: contain;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lightboxLabel {
+  margin-top: 20px;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.closeBtn {
+  position: absolute;
+  top: -50px;
+  right: -20px;
+  background: none;
+  border: none;
+  color: #818cf8;
+  font-size: 3rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closeBtn:hover {
+  color: #f472b6;
+  transform: rotate(90deg);
+}
+
+/* --- 6. TEXT & NAVIGATION (High Contrast Fix) --- */
+.card h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #ffffff !important; /* Pure White heading */
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ffffff !important; /* Pure White description */
+  opacity: 0.9;
+  margin-bottom: 25px;
+  flex-grow: 1;
+}
+
+.backBtn {
+  display: block;
+  margin: 0 auto 40px auto;
+  background: rgba(129, 140, 248, 0.1);
+  border: 1px solid #818cf8;
+  color: #818cf8;
+  padding: 12px 30px;
+  border-radius: 100px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.backBtn:hover {
+  background: #818cf8;
+  color: white;
+  box-shadow: 0 0 20px rgba(129, 140, 248, 0.4);
+}
+
+.tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 25px;
+}
+
+.tech span {
+  background: rgba(99, 102, 241, 0.2);
+  color: #a5b4fc; /* Brighter indigo for labels */
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid rgba(129, 140, 248, 0.3);
+}
+
+.galleryLink, .card a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 600;
+  color: #818cf8;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.galleryLink:hover, .card a:hover {
+  color: #f472b6;
+  gap: 10px;
+}
+
+/* --- 7. ANIMATIONS & MEDIA --- */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 1024px) { .galleryGrid { column-count: 2; } }
+@media (max-width: 600px) { 
+  .galleryGrid { column-count: 1; } 
+  .closeBtn { top: -60px; right: 0; }
+}

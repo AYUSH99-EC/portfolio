@@ -1,0 +1,163 @@
+/* --- GLOBAL BACKGROUND PROTECTION --- */
+body {
+  background-color: #0f172a !important; /* Keep the base consistent */
+}
+
+/* --- THE BLENDING BRIDGE --- */
+.hero {
+  /* Remove any sharp bottom edges */
+  padding-bottom: 100px;
+  position: relative;
+}
+
+/* Create a "Light Leak" that spills from Hero into About */
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: -150px; /* Spills over into the next section */
+  left: 0;
+  width: 100%;
+  height: 300px;
+  background: radial-gradient(
+    ellipse at 50% 0%, 
+    rgba(99, 102, 241, 0.15) 0%, 
+    rgba(15, 23, 42, 0) 70%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* --- THE ABOUT SECTION FLOW --- */
+.about {
+  margin-top: -50px; /* Pull it up so it sits inside the hero's glow */
+  background: transparent !important; /* Remove the gray-silver block */
+  position: relative;
+  z-index: 10;
+  padding-top: 50px;
+}
+.about {
+  background: linear-gradient(
+    180deg,
+    var(--background-color) 0%,
+    #0b1220 100%
+  );
+  padding: 120px 0;
+  position: relative;
+}
+
+
+/* Layout */
+.about .wrapper {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 90px;
+  align-items: center;
+}
+
+/* LEFT CONTENT */
+.about .content h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 28px;
+  color: var(--text-main);
+}
+
+.about .content h2 span {
+  background: linear-gradient(
+    to right,
+    var(--primary-color),
+    #a855f7
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about .content p {
+  color: rgba(248, 250, 252, 0.78);
+  line-height: 1.9;
+  margin-bottom: 22px;
+  max-width: 540px;
+  font-size: 1.05rem;
+}
+
+/* RIGHT CARDS */
+.about .cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.about .card {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.02)
+    );
+  border-radius: 30px;
+  padding: 42px 24px;
+  text-align: center;
+  position: relative;
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+/* subtle indigo edge */
+.about .card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(99, 102, 241, 0.25),
+    transparent
+  );
+  opacity: 0;
+  transition: 0.4s ease;
+}
+
+.about .card h3 {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  margin-bottom: 12px;
+}
+
+.about .card span {
+  color: rgba(248, 250, 252, 0.65);
+  font-size: 0.95rem;
+}
+
+/* HOVER — THIS IS WHERE MAGIC HAPPENS */
+.about .card:hover {
+  transform: translateY(-14px);
+  box-shadow:
+    0 35px 60px rgba(0, 0, 0, 0.6),
+    0 0 35px rgba(99, 102, 241, 0.35);
+}
+
+.about .card:hover::before {
+  opacity: 1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .about .wrapper {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about .content p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .about .cards {
+    grid-template-columns: 1fr;
+  }
+}

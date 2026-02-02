@@ -1,0 +1,119 @@
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--surface-color);
+  box-shadow: 0 2px 15px rgba(0,0,0,0.5);
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  transition: var(--transition);
+}
+
+.navbar.scrolled {
+  background-color: rgba(30,41,59,0.95);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+
+.navContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.logo {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.logo:hover {
+  color: #a855f7;
+}
+
+/* Nav Links Container */
+.navLinks {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+/* TARGET THE LI DIRECTLY (Fixes Cursor & Styles for react-scroll) */
+.navLinks li {
+  font-weight: 500;
+  color: var(--text-main);
+  transition: var(--transition);
+  position: relative;
+  cursor: pointer; /* This fixes the text-selector issue */
+}
+
+/* Updated hover line for react-scroll Link */
+.navLinks li::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: var(--primary-color);
+  transition: 0.3s ease;
+}
+
+.navLinks li:hover::after {
+  width: 100%;
+}
+
+.navLinks li:hover {
+  color: var(--primary-color);
+}
+
+/* Hamburger for Mobile */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--text-main);
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+/* Mobile Nav */
+@media (max-width: 768px) {
+  .navLinks {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 220px;
+    background-color: var(--surface-color);
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    transform: translateX(100%);
+    transition: 0.3s ease;
+    border-radius: 12px 0 0 12px;
+    box-shadow: -4px 8px 20px rgba(0,0,0,0.5);
+  }
+
+  .navLinks.active {
+    transform: translateX(0);
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}

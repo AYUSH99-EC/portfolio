@@ -1,0 +1,39 @@
+.footer {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  color: #cbd5f5;
+  margin-bottom: 25px;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.socials a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.socials a:hover {
+  color: var(--primary-color);
+}
+
+.copy {
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
