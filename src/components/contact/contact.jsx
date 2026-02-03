@@ -1,5 +1,4 @@
 import { useRef } from 'react';
-import emailjs from '@emailjs/browser';
 import styles from "./Contact.module.css";
 
 function Contact() {
@@ -11,19 +10,19 @@ function Contact() {
 
     // Your actual IDs are now fully integrated:
     emailjs.sendForm(
-      'service_1tovk28', 
-      'template_bnx8oyc', 
-      form.current, 
+      'service_1tovk28',
+      'template_bnx8oyc',
+      form.current,
       'iQcTs1eutvK9jaGcI'
     )
-    .then((result) => {
+      .then((result) => {
         console.log(result.text);
         alert("Success! Ayush, you have received a new message in your inbox.");
         e.target.reset(); // Clears the form after success
-    }, (error) => {
+      }, (error) => {
         console.log(error.text);
         alert("Something went wrong. Please check your internet or try again.");
-    });
+      });
   };
 
   return (
@@ -37,7 +36,7 @@ function Contact() {
             I'm currently looking for new opportunities. My inbox is always open.
             Whether you have a question or just want to say hi, I’ll get back to you!
           </p>
-          
+
           <div className={styles.emailCard}>
             <span className={styles.emailLabel}> Email: </span>
             <a href={`mailto:${myEmail}`} className={styles.emailLink}>
