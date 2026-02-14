@@ -2,6 +2,7 @@ import styles from "./Gallery.module.css";
 import cer from "../../assets/images/gallery/photo/cer.jpeg";
 import nec from "../../assets/images/gallery/photo/nec.jpeg";
 import brain from "../../assets/images/brain.png";
+import ganpati from "../../assets/images/ganpati.jpeg";
 import { useState } from "react";
 
 function Gallery() {
@@ -11,6 +12,7 @@ function Gallery() {
     { src: cer, label: "Gyanotsav 2025" },
     { src: nec, label: "NEC Certificate" },
     { src: brain, label: "Braihub Website" },
+    { src: ganpati, label: "ganesh edit" },
   ];
 
   return (
