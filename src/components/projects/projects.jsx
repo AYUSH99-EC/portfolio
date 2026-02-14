@@ -6,7 +6,7 @@ import brochureImg from "../../assets/images/brochure.png";
 import logoImg from "../../assets/images/logo.png";
 import visitingCardImg from "../../assets/images/visitng card.png";
 import multiverse from "../../assets/images/multiverse.png";
-import brain from "../../assets/images/brain.png";
+
 import landingpage from "../../assets/images/landingpage.png";  
 function Projects() {
   const [currentView, setCurrentView] = useState("list");
@@ -38,7 +38,7 @@ function Projects() {
     { src: logoImg, label: "Brand Logo" },
     { src: visitingCardImg, label: "Business Card" },
     { src: multiverse, label: "Multiverse website" },
-    { src: brain, label: "Brain website" },
+  
     { src: landingpage, label: "Landing Page" },
   ];
 
