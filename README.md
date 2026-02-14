@@ -52,7 +52,7 @@ My background spans **frontend web development, UI design, photography, and visu
 ## 📫 Connect With Me
 - 🌐 Portfolio: https://portfolio-two-tau-60.vercel.app/
 - 💼 LinkedIn: [*(https://www.linkedin.com/in/ayush-shukla-675a48319)*]
-- 📸 Instagram / Behance (optional): *(creative work)*
+
 
 ---
 
