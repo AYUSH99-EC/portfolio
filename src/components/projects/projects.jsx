@@ -6,8 +6,11 @@ import brochureImg from "../../assets/images/brochure.png";
 import logoImg from "../../assets/images/logo.png";
 import visitingCardImg from "../../assets/images/visitng card.png";
 import multiverse from "../../assets/images/multiverse.png";
-
-import landingpage from "../../assets/images/landingpage.png";  
+import landingpage from "../../assets/images/landingpage.png";
+import nav from "../../assets/images/nav.jpg";
+import navratri from "../../assets/images/navratri.jpg";
+import project from "../../assets/images/project.png";
+import edit from "../../assets/images/edit.png";
 function Projects() {
   const [currentView, setCurrentView] = useState("list");
   const [selectedImg, setSelectedImg] = useState(null); // Track image for Lightbox
@@ -38,8 +41,11 @@ function Projects() {
     { src: logoImg, label: "Brand Logo" },
     { src: visitingCardImg, label: "Business Card" },
     { src: multiverse, label: "Multiverse website" },
-  
+    { src: nav, label: "post" },
     { src: landingpage, label: "Landing Page" },
+    { src: navratri, label: "Navratri post" },
+    { src: project, label: " hindi divas" },
+    { src: edit, label: "navratri post (1)" },
   ];
 
   // Render the Gallery View
