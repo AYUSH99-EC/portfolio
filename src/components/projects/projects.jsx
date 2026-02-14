@@ -23,7 +23,7 @@ function Projects() {
       title: "Portfolio Website",
       description: "My personal portfolio built using React showcasing skills, projects and photography.",
       tech: ["React", "CSS Modules"],
-      link: " "
+      link: "https://portfolio-two-tau-60.vercel.app/"
     },
     {
       title: "UI Design & Social Media Creatives",
