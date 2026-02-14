@@ -16,7 +16,9 @@ function App() {
       <About />
       <Skills />
       <Projects />
-      <Gallery />
+      
+      {/* <Gallery /> */} 
+
       <Contact />
       <Footer />
     </>
@@ -24,5 +26,3 @@ function App() {
 }
 
 export default App;
-
-
